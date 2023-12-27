@@ -1,3 +1,5 @@
+
+const list = document.querySelector(".gallery");
 const images = [
   {
     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -12,3 +14,11 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const markup = images
+  .map(
+    (images) =>
+      `<li class="list-item new"><img src=${images.url} alt=${images.alt} width="200" </img></li>`
+  )
+  .join("");
+list.insertAdjacentHTML("beforeend", markup);
